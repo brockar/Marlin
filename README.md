@@ -1,4 +1,3 @@
-﻿# Marlin 3D Printer Firmware
 # Marlin 2.0.x on Ender 3 with a SKR 1.3 and TMC 2130 (SPI) (Sensorless and silent) (Bigtree)
 <img align="right" src="../../raw/1.1.x/buildroot/share/pixmaps/logo/marlin-250.png" />
 
@@ -13,8 +12,15 @@ I use Sensorless except in Z, for that you may have to weld somethings, but I ha
 
 The file that you have to put in the SD Card is "firmware.bin", you MUST to move it, or copy&paste and later delete it. "firmware.bin" can't be in the folder before you compile. The firmware is in "C:...\Marlin\.pio\build\LPC1768\".
 
+After do all this, you must to do a step calibration, and a PID again. 
+
 Here you have some tutorials that could helps you. 
+
 How to connect and configurate:
 https://medium.com/@damien.martin.guillerez/skr-1-3-tmc2130-on-a-creality-ender-3-b4ec4abfdfd1 (by: Damien Martin-Guillerez)
+
 To configure Marlin, you need Platform.io in a code editor, it could be Visual Studio Code or ATOM, I did all in ATOM.
 https://youtu.be/kLTaNh301AE?t=158 
+
+PID 
+https://reprap.org/wiki/PID_Tuning
