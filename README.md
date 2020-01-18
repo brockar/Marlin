@@ -19,6 +19,8 @@ Here you have some tutorials that could helps you.
 How to connect and configurate:
 https://medium.com/@damien.martin.guillerez/skr-1-3-tmc2130-on-a-creality-ender-3-b4ec4abfdfd1 (by: Damien Martin-Guillerez)
 
+When you connect the LCD, the pins go upside down.
+
 To configure Marlin, you need Platform.io in a code editor, it could be Visual Studio Code or ATOM, I did all in ATOM.
 https://youtu.be/kLTaNh301AE?t=158 
 
