@@ -2227,7 +2227,7 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-  #define STEALTHCHOP_XY
+   #define STEALTHCHOP_XY
   //#define STEALTHCHOP_Z //descomentado 
   //#define STEALTHCHOP_E //descomentado
 
@@ -2245,7 +2245,7 @@
    * Define you own with
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V 
 
   /**
    * Monitor Trinamic drivers for error conditions,
@@ -2273,13 +2273,13 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD
+  //#define HYBRID_THRESHOLD //descomentar
 
-  #define X_HYBRID_THRESHOLD     100  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    100
-  #define Y_HYBRID_THRESHOLD     100
-  #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       3
+  #define X_HYBRID_THRESHOLD     100  // [mm/s] 100
+  #define X2_HYBRID_THRESHOLD    100  
+  #define Y_HYBRID_THRESHOLD     100  //100
+  #define Y2_HYBRID_THRESHOLD    100  
+  #define Z_HYBRID_THRESHOLD      3  //3
   #define Z2_HYBRID_THRESHOLD      3
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
