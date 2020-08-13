@@ -2227,7 +2227,7 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-   #define STEALTHCHOP_XY
+  #define STEALTHCHOP_XY
   #define STEALTHCHOP_Z //descomentado 
   #define STEALTHCHOP_E //descomentado
 
@@ -2275,11 +2275,11 @@
    */
   #define HYBRID_THRESHOLD //descomentar
 
-  #define X_HYBRID_THRESHOLD       2  // [mm/s] 100
+  #define X_HYBRID_THRESHOLD     100  // [mm/s] 100
   #define X2_HYBRID_THRESHOLD      2  
-  #define Y_HYBRID_THRESHOLD       2  //100
+  #define Y_HYBRID_THRESHOLD     100  //100
   #define Y2_HYBRID_THRESHOLD      2  
-  #define Z_HYBRID_THRESHOLD       1  //3
+  #define Z_HYBRID_THRESHOLD     100    //3
   #define Z2_HYBRID_THRESHOLD      3
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
