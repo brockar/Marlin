@@ -1,0 +1,188 @@
+Otros:
+https://github.com/Creality3DPrinting/Ender-3/blob/master/Ender-3%20Firmware%20(Marlin)/Ender-3%20(includes%20power%20failure%20resume-%20English)/Marlin/Configuration_adv.h
+https://github.com/bigtreetech/BIGTREETECH-SKR-V1.3/blob/master/BTT%20SKR%20V1.3/firmware/Marlin-2.0.x/Marlin/Configuration_adv.h
+https://github.com/talldonkey/Marlin-2.0-Ender-3-SKR-1.3/blob/2.1.x-Ender-3-SKR-1.3/Marlin/Configuration_adv.h
+
+SKR 1.3 
+4 drivers 2130 SPI con final de carrera (aunque se puede poner sin final de carrera)
+Calibración a mano
+Marlin 2.1
+LCD Original Ender 3 
+
+Descargar Marlin
+Descargar Vs code o ATOM
+Instalar PlatformIO IDE
+
+Esta todo en la pagina de Marlin por si hay algun error
+o algún cambio en su hardware pero es más o menos lo mismo.
+
+#define MOTHERBOARD BOARD_BTT_SKR_V1_3
+#define SERIAL_PORT -1
+#define BAUDRATE 115200
+
+BUILD con LPC 1768
+
+#define X_DRIVER_TYPE  TMC2130
+TMC2130 en todos los drivers
+
+Thermal Settings
+Aca pueden mirar si cambiaron de hotend o de cama caliente cuál es. 
+Arriba tenemos una descripción.
+Para la ender 3 stock es lo siguiente.
+
+#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_BED 5
+
+PID Settings
+Esto lo hacemos en el video que sigue.
+Es para controlar las temperaturas y que sean más estables.
+
+definimos
+#define PIDTEMPBED
+para poder hacer PID en la cama
+
+Todos endstop false
+#define X_MIN_ENDSTOP_INVERTING false
+
+Esto lo pueden calibrar como se va a mostrar en un video próximo.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80.1, 400, 415 }
+
+
+velocidad maxima de la maquina
+#define DEFAULT_MAX_FEEDRATE          { 120, 120, 10, 25 }
+#define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 100, 10000 }
+
+#define DEFAULT_ACCELERATION          1500 
+
+#define CLASSIC_JERK
+#if ENABLED(CLASSIC_JERK)
+  #define DEFAULT_XJERK 8.0
+  #define DEFAULT_YJERK 8.0
+  #define DEFAULT_ZJERK  0.4
+
+
+ Z Probe Options
+
+#define PROBE_MANUALLY
+
+#define NOZZLE_TO_PROBE_OFFSET { 10, 0, 0 }
+
+#define INVERT_X_DIR true
+
+#define INVERT_E0_DIR true
+
+Dimensiones de la impresora.
+#define X_BED_SIZE 220
+#define Y_BED_SIZE 220
+
+#define Z_MAX_POS 250
+
+
+//===========================================================================
+//=============================== Bed Leveling ==============================
+//===========================================================================
+
+#define AUTO_BED_LEVELING_BILINEAR
+
+#define RESTORE_LEVELING_AFTER_G28
+
+//===========================================================================
+//=================================== Mesh ==================================
+//===========================================================================
+
+#define LCD_BED_LEVELING
+
+//=============================================================================
+//============================= Additional Features ===========================
+//=============================================================================
+#define EEPROM_SETTINGS 
+
+#define PREHEAT_1_LABEL       "PLA"
+#define PREHEAT_1_TEMP_HOTEND 200
+#define PREHEAT_1_TEMP_BED     60
+#define PREHEAT_1_TEMP_CHAMBER 35
+#define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_2_LABEL       "ABS"
+#define PREHEAT_2_TEMP_HOTEND 230
+#define PREHEAT_2_TEMP_BED    90
+#define PREHEAT_2_TEMP_CHAMBER 35
+#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 25
+
+#define NOZZLE_PARK_FEATURE
+
+Si quieren contar las horas de impresion
+#define PRINTCOUNTER
+
+#define SDSUPPORT
+
+//=============================================================================
+//=======================   LCD / Controller Selection  =======================
+//=========================      (Graphical LCDs)      ========================
+//=============================================================================
+#define CR10_STOCKDISPLAY
+
+
+
+FIN configuration.h
+--------------------------------------------------------------------
+
+Configuration_adv.h
+Primero activamos para poder hacer la calibración
+#define ADVANCED_PAUSE_FEATURE
+
+#if HAS_TRINAMIC_CONFIG
+Ponemos las potencias en mA
+Yo uso así en la ender 3 y no calienta tanto ni me da errores de impresión.
+
+#define X_CURRENT       700   
+#define Y_CURRENT       700
+#define Z_CURRENT       670
+#define E0_CURRENT      700
+
+#define TMC_USE_SW_SPI
+
+Comentar para que el extrusor quede en modo potencia, yo lo uso en silencioso y no tuve problemas.
+#define STEALTHCHOP_E
+
+Esto lo podes cambiar desde el LCD sin volver a compilar.
+
+#define HYBRID_THRESHOLD
+Para que desde cierta velocidad cambien de modo silencioso a potencia.
+
+//#define SENSORLESS_HOMING
+Se puede activar para que use los drivers como finales de carrera, yo lo probe y con los 
+motores de la ender 3 me dan problemas, así que prefiero seguir usando los finales de carrera.
+
+Se puede variar la sensibilidad, eso hay que probarlo pero vi que recomiendan 2.
+
+#define TMC_DEBUG
+
+Por ultimo activamos las modificaciones de la pantalla 
+Games
+
+comentar
+//#define STATUS_CHAMBER_ANIM
+
+descomentar 
+#define STATUS_ALT_BED_BITMAP     // Use the alternative bed bitmap
+#define STATUS_ALT_FAN_BITMAP     // Use the alternative fan bitmap
+#define STATUS_FAN_FRAMES 4       // :[0,1,2,3,4] Number of fan animation frames
+#define STATUS_HEAT_PERCENT 
+
+compilar y buscar en .pio/build/LPC1768/firmware.bin
+cortar y pegar en la tarjeta que usamos para la impresora, 
+y apretamos el boton de reiniciar la placa.
+
+#define SDCARD_CONNECTION ONBOARD
+
+
+
+
+
+
+
+
+
+
+
