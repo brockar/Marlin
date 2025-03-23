@@ -176,13 +176,6 @@ y apretamos el boton de reiniciar la placa.
 
 #define SDCARD_CONNECTION ONBOARD
 
-
-
-
-
-
-
-
-
-
-
+at
+src/pins/lpc1768/BOARD_BTT_SKR_V1_3
+#define EXP1_01_PIN                        P1_23
