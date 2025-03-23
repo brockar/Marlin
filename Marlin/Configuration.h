@@ -96,7 +96,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
@@ -106,7 +106,7 @@
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
 #define SERIAL_PORT_2 0
-#define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+#define BAUDRATE_2 250000 // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -713,27 +713,23 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  29.12
-    #define DEFAULT_Ki  2.48
-    #define DEFAULT_Kd  85.51
+    #define DEFAULT_Kp  30.05
+    #define DEFAULT_Ki  2.43
+    #define DEFAULT_Kd  92.84
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
 #endif
 
 /*
-2 VENTS
-S200 M106 S155
-#define DEFAULT_Kp 28.24
-#define DEFAULT_Ki 2.57
-#define DEFAULT_Kd 77.75
 
-2 VENTS 90% 225G
-M106 S230 (90%)
-M303 E0 S225 C10
-#define DEFAULT_Kp 29.12
-#define DEFAULT_Ki 2.48
-#define DEFAULT_Kd 85.51
+2 VENTS 100% 210ºC
+M106 S255 (100%)
+M303 E0 S210 C10
+#define DEFAULT_Kp 30.05
+#define DEFAULT_Ki 2.43
+#define DEFAULT_Kd 92.84
+
 */
 
 /**
