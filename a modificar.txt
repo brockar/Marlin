@@ -181,5 +181,3 @@ src/pins/lpc1768/pins_BTT_SKR_common.h
 change 
 TEMP_0_PIN
 for TEMP_1_PIN
-
-#define SCROLL_LONG_FILENAMES
