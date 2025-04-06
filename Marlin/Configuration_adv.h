@@ -1846,7 +1846,7 @@
   //#define LONG_FILENAME_WRITE_SUPPORT   // Create / delete files with long filenames via M28, M30, and Binary Transfer Protocol
   //#define M20_TIMESTAMP_SUPPORT         // Include timestamps by adding the 'T' flag to M20 commands
 
-  //#define SCROLL_LONG_FILENAMES         // Scroll long filenames in the SD card menu
+  #define SCROLL_LONG_FILENAMES         // Scroll long filenames in the SD card menu
 
   //#define SD_ABORT_NO_COOLDOWN          // Leave the heaters on after Stop Print (not recommended!)
 
@@ -3340,8 +3340,8 @@
    * Define your own with:
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-    #define CHOPPER_TIMING CHOPPER_DEFAULT_24V      
-  //#define CHOPPER_TIMING CHOPPER_DEFAULT_12V      
+    #define CHOPPER_TIMING CHOPPER_DEFAULT_24V
+  //#define CHOPPER_TIMING CHOPPER_DEFAULT_12V
   //#define CHOPPER_TIMING_X  CHOPPER_TIMING        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
   //#define CHOPPER_TIMING_Y  CHOPPER_TIMING        // For Y Axes (override below)
@@ -3397,7 +3397,7 @@
    */
   //#define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     150  // [mm/s] 
+  #define X_HYBRID_THRESHOLD     150  // [mm/s]
   //TODO 100 in both
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     150
