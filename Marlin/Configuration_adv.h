@@ -3322,7 +3322,7 @@
     #define STEALTHCHOP_U
     #define STEALTHCHOP_V
     #define STEALTHCHOP_W
-    #define STEALTHCHOP_E
+    #define STEALTHCHOP_E //!To-do desactivar para lineal advance (no necesario actualmente)
   #endif
 
   /**
