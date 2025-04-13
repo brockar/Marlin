@@ -570,7 +570,7 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
 #define TEMP_SENSOR_0 5 
-//30 (o 1) para el negro o el malito (NTC100K B3950) 
+// 30 (o 1) para el negro o el malito (NTC100K B3950) 
 // 5 para el amarillo o el mejorcito (104NT-4-R025H42G (104GT-2))
 // 5 para el cable azul nuevo
 #define TEMP_SENSOR_1 0
@@ -2513,8 +2513,8 @@ M303 E0 S210 C10
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND 225
-#define PREHEAT_2_TEMP_BED     90
+#define PREHEAT_2_TEMP_HOTEND 220
+#define PREHEAT_2_TEMP_BED     70
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
